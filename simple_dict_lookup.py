@@ -1,19 +1,24 @@
+# a very simple dictionary builder and lookup loop
 import sys
 
 def mkDict(lines):
     dict = {}
     for line in lines:
-        tabs = line.split('\t')
-        if len(tabs) == 2:
-            dict[tabs[0]] = tabs[1]
+        fields = line.split(';')
+        if len(fields) >= 2:
+            dict[fields[0].strip()] = fields[1].strip()
+    lines.close()
     return dict
 
-def readDict(filename):
+def readDict1(filename):
     file = open(filename)
     lines = file.readlines()
     file.close()
     return mkDict(lines)
 
+def readDict(filename):
+    file = open(filename)
+    return mkDict(file)
 
 def main():
     filename = sys.argv[1]
