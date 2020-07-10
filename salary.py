@@ -11,7 +11,7 @@ def salary(sal,taxrate,rent):
 
     labels = 'skatt', 'hyra', 'kvar'
     sizes = [int(tax), int(rent), int(net-rent)]
-    colors = ['red','yellow','green']
+    colors = ['red','purple','green']
     plt.pie(sizes, labels=labels, colors=colors)
     plt.show()
 
