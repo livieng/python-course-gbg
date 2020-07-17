@@ -40,3 +40,13 @@ def slope():#beräknar lutningen mellan två pinkter i ett kordinatssystem
     slope=(y2-y1)/(x2-x1)
     print("lutningen mellan punkterna är", slope)
 #slope()
+
+import math
+
+def area(): #beräknar arean på en triangel
+    a, b, c=eval(input("Ange sidorna på tringangeln: "))
+    s=(a+b+c)/2
+    A=round(math.sqrt(s*(s-a)*(s-b)*(s-c)), 2)
+    print("Arean på triangeln är", A, "areaenheter")
+#area()
+
