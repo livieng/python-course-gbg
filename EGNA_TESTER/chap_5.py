@@ -25,13 +25,13 @@ def phrase():
 #phrase()
 
 # ex. 5.5
-def name2num():
+def namenum():
     name=input("Enter your first name: ")
     num=0
     for letter in name:
         num+=ord(letter)-96
     print(num)
-#name2num()
+#namenum()
 
 # ex. 5.6
 def name2num():
@@ -44,3 +44,27 @@ def name2num():
         num=num+(ord(letters)-96)
     print(num)
 #name2num()
+
+# ex. 5.7 ceasars cipher
+def cipher():
+    mess=input("Enter a message to encode: " )
+    k=eval(input("Enter key: "))
+    cipher=""
+    for ch in mess:
+        if ch == ' ':
+            cipher+= ' '
+        else:
+            cipher+=chr(ord(ch) + k)
+    print(cipher)
+#cipher()
+
+# count words, lines, characters
+def wordcount():
+    text=input("Enter filename: ")
+    doc=open(text, "r").read()
+    words=doc.split()
+    wc= len(words)
+    lines=len(doc.splitlines())
+    ch=len("".join(doc))
+    print(wc,lines,ch)
+#wordcount()

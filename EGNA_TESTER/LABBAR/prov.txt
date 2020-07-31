@@ -1,0 +1,3 @@
+Hej detta är 100 prov på att importera textfiler till ett program.
+Detta prov ska räkna hur många rader och karaktäeren ett dokument har!
+det ska allt gå bra? Eller hur?!
