@@ -1,3 +1,5 @@
+# Lab 1: Word Counting
+
 def tokenize(lines):
     words= []
     for line in lines:
