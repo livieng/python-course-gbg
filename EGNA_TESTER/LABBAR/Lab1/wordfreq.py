@@ -45,12 +45,11 @@ def countWords(words, stopWords):
 
 
 def printTopMost(frequencies, n):
-    #newList = []
     output = ""
-    #for word,freq in frequencies.items():
+   
     newList = sorted(frequencies.items(), key = lambda x: -x[1])
 
     for word,freq in newList[:n]:
-        output += str(word).ljust(20) + str(freq).rjust(5) + "\n"
-
-    return output 
+        output += (str(word).ljust(20) + str(freq).rjust(5) + "\n")
+    
+    print(output, end="") 
