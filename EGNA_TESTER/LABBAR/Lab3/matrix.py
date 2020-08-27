@@ -2,10 +2,10 @@
 
 def transpose(matrix):       # returns new matrix where the matrix row turns into column and vice versa
     M = matrix
-    rows = len(M)              # nr of rown
+    rows = len(M)
     if rows == 0:
         return []
-    cols = len(M[0])           # nr of columns
+    cols = len(M[0])
     new_m = []
 
     for i in range(cols):
@@ -28,7 +28,6 @@ def powers(list, int1, int2):
             new_row.append(new)
         matrix.append(new_row)
     return matrix
-
 
 def matmul(A, B):          # multiply two matrices C = A * B
     rows = len(A)

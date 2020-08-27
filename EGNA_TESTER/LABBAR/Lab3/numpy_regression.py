@@ -6,6 +6,7 @@ import sys
 def powers(list, int1, int2):
     rows = len(list)
     cols = len(range(int1, int2 + 1))
+
     matrix = []
     for i in list:
         new_row = []
