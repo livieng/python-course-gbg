@@ -5,8 +5,8 @@ import random
 class Game:
     """ Create a game with a given size of cannon (length of sides) and projectiles (radius) """
     def __init__(self, cannonSize, ballSize):
-        self.csize = cannonSize
-        self.bsize = ballSize 
+        self.cannon_size = cannonSize
+        self.ball_size = ballSize 
         self.p0 = Player(self, "blue", -90)
         self.p1 = Player(self, "red", 90)
         self.wind = 0
@@ -18,11 +18,11 @@ class Game:
 
     """ The height/width of the cannon """
     def getCannonSize(self):
-        return self.csize
+        return self.cannon_size
 
     """ The radius of cannon balls """
     def getBallSize(self):
-        return self.bsize
+        return self.ball_size
 
     """ The current player, i.e. the player whose turn it is """
     def getCurrentPlayer(self):
@@ -30,7 +30,7 @@ class Game:
 
     """ The opponent of the current player """
     def getOtherPlayer(self):
-        if self.getCurrentPlayer() is self.p0:
+        if self.getCurrentPlayer() == self.p0:
             return self.p1
         else:
             return self.p0
@@ -74,9 +74,9 @@ class Player:
         self.lastProjVelocity = velocity
         self.lastProjAngle = angle
         if self is self.game.p1:
-            self.projectile = Projectile(180 - self.lastProjAngle, self.lastProjVelocity, self.game.getCurrentWind(), self.getX(), self.game.csize/2, -110, 110)
+            self.projectile = Projectile(180 - self.lastProjAngle, self.lastProjVelocity, self.game.getCurrentWind(), self.getX(), self.game.cannon_size/2, -110, 110)
         else:
-            self.projectile = Projectile(self.lastProjAngle, self.lastProjVelocity, self.game.getCurrentWind(), self.getX(), self.game.csize/2, -110, 110)
+            self.projectile = Projectile(self.lastProjAngle, self.lastProjVelocity, self.game.getCurrentWind(), self.getX(), self.game.cannon_size/2, -110, 110)
         return self.projectile
 
     """ Gives the x-distance from this players cannon to a projectile. 

@@ -159,7 +159,6 @@ def testGraphics(ggame):
     # Fire a red projectile and move it a bit
     ggame.setCurrentWind(0)
     ggame.getCurrentPlayer().fire(30, 30).update(2)
-    
 
     circles = [x for x in w.items if type(x) == circ_type]
     

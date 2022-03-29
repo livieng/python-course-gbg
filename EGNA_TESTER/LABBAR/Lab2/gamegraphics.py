@@ -1,16 +1,6 @@
 from graphics import *
 from gamemodel import *
-# Its constructor should take only a Game object.
-# TODO: In addition to the methods of Game, GraphicGame needs to have a getWindow method that returns the 
-#       main GraphWin object the game is played in
-# HINT: Look at the other classes in this file, the GraphicGame class should "wrap around" a Game object the same 
-#       way GraphicPlayer wraps around a Player
-# HINT: These lines are good for creating a window:
-#  win = GraphWin("Cannon game" , 640, 480, autoflush=False)
-#  win.setCoords(-110, -10, 110, 155)
-# HINT: Don't forget to call draw() on every component you create, otherwise they will not be visible
-# HINT: You need to get the Players from the Game object (the model), wrap them into GraphicPlayers and store them, 
-#       and all get-methods for players (e.g. getCurrentPlayer) must return the Graphical versions'
+
 class GraphicGame:
     """GraphicGame creates the main game window and draws the line that represents the ground"""
     def __init__(self, game):
@@ -38,7 +28,7 @@ class GraphicGame:
             return self.p1graphic 
         
     def getOtherPlayer(self):
-        if self.game.getCurrentPlayerNumber() != 0:
+        if self.game.getCurrentPlayerNumber() == 1:
             return self.p0graphic
         else:
             return self.p1graphic 
@@ -68,7 +58,7 @@ class GraphicPlayer:
         self.win = window
         self.game = game
         self.player = player
-        self.playerGraphic = Rectangle(Point(self.getX() - self.game.getCannonSize()/2, 0), Point(self.getX() + self.game.getCannonSize()/2, self.game.csize))
+        self.playerGraphic = Rectangle(Point(self.getX() - self.game.getCannonSize()/2, 0), Point(self.getX() + self.game.getCannonSize()/2, self.game.cannon_size))
         self.playerGraphic.setFill(self.getColor())
         self.playerGraphic.draw(self.win)
         self.scoreText = Text(Point(self.getX(),-5), "Score: " + str(self.getScore())).draw(self.win)
@@ -107,7 +97,7 @@ class GraphicProjectile:
         self.game = game
         self.proj = proj
         self.win = window
-        self.projGraphic = Circle(Point(self.getX(), self.getY()), self.game.bsize)
+        self.projGraphic = Circle(Point(self.getX(), self.getY()), self.game.ball_size)
         self.projGraphic.setFill(color)
         self.projGraphic.draw(self.win)
         
