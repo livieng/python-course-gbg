@@ -1,3 +1,3 @@
-# Sommarkurs i Intriduktion till Python
+# Sommarkurs i Introduktion till Python
 
 Från sommaren 2020
